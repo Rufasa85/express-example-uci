@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const PORT = 3000;
+const path = require("path")
 
 const pets = require("./pets.json")
 
 app.get("/",(req,res)=>{
-    res.send("cool pets all around")
+    res.sendFile(path.join(__dirname,"./views/index.html"))
 })
 
 app.get("/api/pets",(req,res)=>{
