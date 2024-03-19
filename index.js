@@ -5,6 +5,9 @@ const path = require("path")
 
 const pets = require("./pets.json")
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static("public"))
 
 app.get("/",(req,res)=>{
@@ -12,7 +15,19 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/api/pets",(req,res)=>{
+    console.log(req.method,req.url)
     res.json(pets);
+})
+
+app.post("/api/pets",(req,res)=>{
+    console.log(req.method,req.url)
+    const pet = req.body;
+    if(!pet.name || !pet.species){
+        return res.status(400).json({msg:"hey, i need a name and species"})
+    }
+    pet.id = crypto.randomUUID();
+    pets.push(pet);
+   res.send("post request recieved")
 })
 
 app.get("/api/pets/:petId",(req,res)=>{
@@ -30,3 +45,5 @@ app.get("/api/pets/:petId",(req,res)=>{
 app.listen(PORT,()=>{
     console.log(`listening to the smooth sounds of port ${PORT}`)
 })
+
+
