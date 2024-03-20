@@ -13,20 +13,5 @@
         "id": 400,
         "name": "Puppy",
         "species": "dog"
-    },
-    {
-        "name": "cat",
-        "species": "cat",
-        "id": "60450cce-588a-4cb6-973d-546140871a03"
-    },
-    {
-        "name": "cat",
-        "species": "cat",
-        "id": "ee171f36-2c1b-49b0-a485-ce1f01512b34"
-    },
-    {
-        "name": "dog",
-        "species": "dog",
-        "id": "ef870655-5e8e-4acf-8ae5-b2f0e64c2905"
     }
 ]
