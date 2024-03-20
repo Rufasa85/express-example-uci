@@ -18,7 +18,7 @@ document.querySelector("#new-pet-form").addEventListener("submit",(e)=>{
         species: document.querySelector("#new-pet-species").value,
     }
     console.log(petObj)
-    fetch("/api/pes",{
+    fetch("/api/pets",{
         method:"POST",
         body:JSON.stringify(petObj),
         headers:{
