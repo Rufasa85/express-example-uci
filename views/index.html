@@ -8,8 +8,13 @@
 </head>
 <body>
     <h1>all the pets here!</h1>
-    <a href="/api/pets">allpets</a>
+    <form id="new-pet-form">
+        <input type="text" name="species" placeholder="species" id="new-pet-species">
+        <input type="text" name="name" placeholder="name" id="new-pet-name">
+        <button>Add new pet!</button>
+    </form>
     <ul id="pets"></ul>
+    <a href="/api/pets">allpets</a>
     <script src="/js/script.js"></script>
 </body>
 </html>
